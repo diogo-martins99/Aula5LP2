@@ -13,31 +13,50 @@ namespace Decorator_Pattern_Test
             Gun myMachineGun = new MachineGun(80, 20);
             Gun myShotGun = new ShotGun(8, 30);
 
+            //Shotgun info
+            Console.WriteLine(myShotGun.Render() + ":");
             myShotGun.Fire();
+
+            //Machine Gun info
+            Console.WriteLine(myMachineGun.Render() + ":");
             myMachineGun.Fire();
-            myShotGun.Render();
-            myMachineGun.Render();
 
             GunDecorator silencedShotGun = new GunSilencer(myShotGun);
             GunDecorator silencedMachineGun = new GunSilencer(myMachineGun);
 
-            Console.WriteLine("\nSilencer equiped on both weapons\n");
+            SeparationText();
 
+            Console.WriteLine("\n\nSilencer equiped on both weapons\n");
+
+            //Shotgun info
+            Console.WriteLine(silencedShotGun.Render() + ":");
             silencedShotGun.Fire();
-            silencedMachineGun.Fire();
-            silencedShotGun.Render();
-            silencedMachineGun.Render();
 
-            GunDecorator extendedShotGun = new GunClip(myShotGun);
+            //Machine Gun info
+            Console.WriteLine(silencedMachineGun.Render() + ":");
+            silencedMachineGun.Fire();
+
+
+            GunDecorator extendedShotGun = new GunClip(silencedShotGun);
             GunDecorator extendedMachineGun = new GunClip(myMachineGun);
 
-            Console.WriteLine("\nExtended clip equiped on both weapons\n");
+            SeparationText();
 
+            Console.WriteLine("\n\nExtended clip equiped on the previous " +
+                "Shotgun and on a new Machine Gun\n");
+
+            //Shotgun info
+            Console.WriteLine(extendedShotGun.Render() + ":");
             extendedShotGun.Fire();
-            extendedMachineGun.Fire();
-            extendedShotGun.Render();
-            extendedMachineGun.Render();
 
+            //Machine Gun info
+            Console.WriteLine(extendedMachineGun.Render() + ":");
+            extendedMachineGun.Fire();
+
+            void SeparationText()
+            {
+                for (int i = 0; i < 50; i++) Console.Write("|");
+            }
         }
     }
 }

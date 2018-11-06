@@ -18,7 +18,7 @@ namespace Decorator_Pattern_Test
 
         public override string Render()
         {
-            return $"{decoratedGun} with an extended clip";
+            return $"{decoratedGun.Render()} with an extended clip";
         }
     }
 }

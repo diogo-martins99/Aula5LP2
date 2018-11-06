@@ -18,7 +18,7 @@ namespace Decorator_Pattern_Test
 
         public override string Render()
         {
-            return $"{decoratedGun} with a silencer";
+            return $"{decoratedGun.Render()} with a silencer";
         }
     }
 }

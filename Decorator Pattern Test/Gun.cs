@@ -13,8 +13,8 @@ namespace Decorator_Pattern_Test
 
         public void Fire()
         {
-            Console.WriteLine($"Ammo capacity: " +
-                $"{AmmoCapacity}\nNoise level: {NoiseLevel} dB");
+            Console.WriteLine($"\nAmmo capacity: " +
+                $"{AmmoCapacity}\nNoise level: {NoiseLevel} dB\n");
         }
 
         public abstract string Render();
