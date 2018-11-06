@@ -26,6 +26,9 @@ namespace ExceptionTest
             {
                 Console.WriteLine("Ocorreu um erro: "
                     + e.Message);
+            } finally
+            {
+                Console.WriteLine("Obrigado pelo teu tempo ehehehe");
             }
 
         }
