@@ -16,10 +16,16 @@ namespace ExceptionTest
             {
                int i = Convert.ToInt32(Console.ReadLine());
                Console.WriteLine($"Numero inserido: {i} ");
+            } catch (OverflowException)
+            {
+                Console.WriteLine("Ocorreu um erro de overflow");
+            } catch (FormatException)
+            {
+                Console.WriteLine("Ocorreu um erro de formato");
             } catch (Exception e)
             {
-                Console.WriteLine("Ocorreu o seguinte erro: " +
-                    e.Message);
+                Console.WriteLine("Ocorreu um erro: "
+                    + e.Message);
             }
 
         }
